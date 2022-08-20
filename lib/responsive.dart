@@ -12,8 +12,6 @@ class Responsive extends StatelessWidget {
     required this.desktop,
   }) : super(key: key);
 
-// This size work fine on my design, maybe you need some customization depends on your design
-
   static bool isMobile(BuildContext context) =>
       MediaQuery.of(context).size.width < 650;
 
@@ -29,11 +27,11 @@ class Responsive extends StatelessWidget {
     return LayoutBuilder(
       // If our width is more than 900 then we consider it a desktop
       builder: (context, constraints) {
-        if (constraints.maxWidth >= 900) {
+        if (constraints.maxWidth >= 1100) {
           return desktop;
         }
-        // If width it less then 900 and more then 650 we consider it as tablet
-        else if (constraints.maxWidth >= 650) {
+        // If width it less then 850 and more then 650 we consider it as tablet
+        else if (constraints.maxWidth >= 850) {
           return tablet;
         }
         // Or less then that we called it mobile
